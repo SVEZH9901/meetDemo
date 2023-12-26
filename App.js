@@ -1,20 +1,18 @@
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Alert } from 'react-native';
+import HomePage from './HomePage';
+import { styles } from './styles';
 
 export default function App() {
+  const handleButtonClick = () => {
+    Alert.alert('Button Clicked!', 'You clicked the button.');
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Киндер буэно вкусный был?</Text>
-      <StatusBar style="auto" />
+      <HomePage onPress={handleButtonClick} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
